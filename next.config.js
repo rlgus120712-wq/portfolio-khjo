@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     domains: [],
     formats: ['image/webp', 'image/avif'],
+    unoptimized: true, // GitHub Pages는 이미지 최적화를 지원하지 않으므로 비활성화
   },
   // 모바일 최적화를 위한 설정
   poweredByHeader: false,
