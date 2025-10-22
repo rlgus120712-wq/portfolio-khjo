@@ -69,7 +69,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 group"
+              className="glass rounded-2xl p-6 transition-all duration-300 group"
             >
               <div className="text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
@@ -77,7 +77,7 @@ const About = () => {
               <h3 className="text-lg sm:text-xl font-bold mb-3 text-white dark:text-white">
                 {feature.title}
               </h3>
-              <p className="text-gray-300 dark:text-gray-300 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+              <p className="text-gray-200 dark:text-gray-200 text-sm sm:text-base leading-relaxed font-medium">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -109,12 +109,12 @@ const About = () => {
                       </div>
                       <h4 className="text-lg sm:text-xl font-bold text-white dark:text-white">Okestro</h4>
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-300 dark:text-gray-300 font-medium bg-gradient-to-r from-blue-500/20 to-blue-600/20 px-3 py-1 rounded-full border border-blue-500/30">
+                    <span className="text-xs sm:text-sm text-gray-200 dark:text-gray-200 font-medium bg-gradient-to-r from-blue-500/20 to-blue-600/20 px-3 py-1 rounded-full border border-blue-500/30">
                       2023.01 ~ 현재
                     </span>
                   </div>
-                  <p className="text-gray-300 dark:text-gray-300 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
-                  <p className="text-gray-400 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-200 dark:text-gray-200 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
+                  <p className="text-gray-100 dark:text-gray-100 text-sm leading-relaxed font-medium">
                     멀티 클라우드 관리 플랫폼 개발 • 서비스 카탈로그 • Keycloak SSO • NX Monorepo • FSD 패턴 • MCP 생성형 AI (Cursor, Windsurf)
                   </p>
                 </div>
@@ -131,12 +131,12 @@ const About = () => {
                       </div>
                       <h4 className="text-lg sm:text-xl font-bold text-white dark:text-white">크로니즈시스템</h4>
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-300 dark:text-gray-300 font-medium bg-gradient-to-r from-green-500/20 to-green-600/20 px-3 py-1 rounded-full border border-green-500/30">
+                    <span className="text-xs sm:text-sm text-gray-200 dark:text-gray-200 font-medium bg-gradient-to-r from-green-500/20 to-green-600/20 px-3 py-1 rounded-full border border-green-500/30">
                       2020.01 ~ 2022.10
                     </span>
                   </div>
-                  <p className="text-gray-300 dark:text-gray-300 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
-                  <p className="text-gray-400 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-200 dark:text-gray-200 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
+                  <p className="text-gray-100 dark:text-gray-100 text-sm leading-relaxed font-medium">
                     스마트팩토리 MES • ERP 연계 • 3D 모니터링 • 수율/일지 관리 • 8개 공장 구축
                   </p>
                 </div>
