@@ -63,18 +63,18 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }} // 지연 시간 단축
-                className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden"
+                className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl overflow-hidden shadow-lg"
               >
                 {/* 아코디언 헤더 - 클릭 가능한 영역 */}
                 <div 
-                  className="p-4 sm:p-6 cursor-pointer hover:bg-white/5 transition-colors duration-200"
+                  className="p-4 sm:p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-center justify-between">
                     {/* 왼쪽: 제목과 회사 정보 */}
                     <div className="flex-1 pr-4">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
                           {project.title}
                         </h3>
                         {project.link && (
@@ -83,22 +83,22 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-shrink-0 p-1.5 bg-primary-500/20 hover:bg-primary-500/30 rounded-md transition-colors"
+                            className="flex-shrink-0 p-1.5 bg-blue-500/20 hover:bg-blue-500/30 rounded-md transition-colors"
                           >
-                            <ExternalLink className="w-4 h-4 text-primary-400" />
+                            <ExternalLink className="w-4 h-4 text-blue-600" />
                           </a>
                         )}
                       </div>
                       
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400">
+                      <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600">
                         {project.company && (
                           <div className="flex items-center gap-1.5">
-                            <Building2 className="w-4 h-4 text-primary-400" />
+                            <Building2 className="w-4 h-4 text-blue-600" />
                             <span>{project.company}</span>
                           </div>
                         )}
                         <div className="flex items-center gap-1.5">
-                          <Briefcase className="w-4 h-4 text-primary-400" />
+                          <Briefcase className="w-4 h-4 text-blue-600" />
                           <span>{project.role}</span>
                         </div>
                       </div>
@@ -106,8 +106,8 @@ const Projects = () => {
 
                     {/* 오른쪽: 기간과 펼치기 버튼 */}
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1.5 text-sm text-gray-400">
-                        <Calendar className="w-4 h-4 text-primary-400" />
+                      <div className="flex items-center gap-1.5 text-sm text-gray-600">
+                        <Calendar className="w-4 h-4 text-blue-600" />
                         <span className="whitespace-nowrap">{project.period}</span>
                       </div>
                       
@@ -117,9 +117,9 @@ const Projects = () => {
                         className="flex-shrink-0"
                       >
                         {isExpanded ? (
-                          <ChevronUp className="w-5 h-5 text-primary-400" />
+                          <ChevronUp className="w-5 h-5 text-blue-600" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-primary-400" />
+                          <ChevronDown className="w-5 h-5 text-blue-600" />
                         )}
                       </motion.div>
                     </div>
@@ -134,27 +134,27 @@ const Projects = () => {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden border-t border-white/10"
+                      className="overflow-hidden border-t border-gray-200"
                     >
-                      <div className="px-4 sm:px-6 py-4 sm:py-6">
+                      <div className="px-4 sm:px-6 py-4 sm:py-6 bg-gray-50">
                         {/* 프로젝트 설명 */}
-                        <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed">
+                        <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
                           {project.description}
                         </p>
 
                         {/* 주요 성과 */}
                         <div className="mb-4">
-                          <h4 className="text-primary-400 font-semibold mb-3 text-base sm:text-lg">
+                          <h4 className="text-blue-600 font-semibold mb-3 text-base sm:text-lg">
                             주요 성과
                           </h4>
                           <div className="space-y-2">
                             {project.highlights.map((highlight, i) => (
                               <div key={i} className="flex items-start gap-2">
-                                <div className="flex-shrink-0 w-1.5 h-1.5 bg-primary-400 rounded-full mt-2"></div>
+                                <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-600 rounded-full mt-2"></div>
                                 <p className={`text-sm sm:text-base leading-relaxed ${
                                   highlight.startsWith('📊 성과:')
-                                    ? 'text-green-400 font-semibold'
-                                    : 'text-gray-300'
+                                    ? 'text-green-600 font-semibold'
+                                    : 'text-gray-700'
                                 }`}>
                                   {highlight}
                                 </p>
@@ -165,14 +165,14 @@ const Projects = () => {
 
                         {/* 기술 스택 */}
                         <div>
-                          <h4 className="text-primary-400 font-semibold mb-3 text-base sm:text-lg">
+                          <h4 className="text-blue-600 font-semibold mb-3 text-base sm:text-lg">
                             기술 스택
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {project.tech.map((tech) => (
                               <span
                                 key={tech}
-                                className="px-3 py-1 bg-primary-500/15 text-primary-300 rounded text-sm font-medium"
+                                className="px-3 py-1 bg-blue-100 text-blue-700 rounded text-sm font-medium"
                               >
                                 {tech}
                               </span>
