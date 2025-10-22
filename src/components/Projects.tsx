@@ -132,7 +132,7 @@ const Projects = () => {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden border-t border-white/10 dark:border-white/10"
                     >
-                      <div className="px-4 sm:px-6 py-4 sm:py-6 glass">
+                      <div className="px-4 sm:px-6 py-4 sm:py-6">
                         {/* 프로젝트 설명 */}
                         <p className="text-gray-700 dark:text-gray-100 text-base sm:text-lg mb-4 leading-relaxed font-medium">
                           {project.description}
