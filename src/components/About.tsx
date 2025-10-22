@@ -61,7 +61,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* 스킬 카드들 - 차트 영역과 동일한 어두운 회색 배경으로 변경 */}
+        {/* 스킬 카드들 - glass 클래스 사용하여 다크/라이트 모드 자동 전환 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {features.map((feature, index) => (
             <motion.div
@@ -69,32 +69,32 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-700/50 transition-all duration-300 group"
+              className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 group"
             >
               <div className="text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 text-white">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-white dark:text-white">
                 {feature.title}
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+              <p className="text-gray-300 dark:text-gray-300 text-sm sm:text-base leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* 경력 섹션 - 차트 영역과 동일한 어두운 회색 배경으로 변경 */}
+        {/* 경력 섹션 - glass 클래스 사용하여 다크/라이트 모드 자동 전환 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-2xl sm:rounded-3xl overflow-hidden"
+          className="glass rounded-2xl sm:rounded-3xl overflow-hidden"
         >
           <div className="p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-8">
               <div className="p-3 bg-blue-500/20 rounded-xl">
                 <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-blue-400" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">경력</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-white">경력</h3>
             </div>
             
             <div className="space-y-8">
@@ -107,14 +107,14 @@ const About = () => {
                       <div className="p-2 bg-blue-500/20 rounded-lg">
                         <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                       </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-white">Okestro</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-white dark:text-white">Okestro</h4>
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-300 font-medium bg-gradient-to-r from-blue-500/20 to-blue-600/20 px-3 py-1 rounded-full border border-blue-500/30">
+                    <span className="text-xs sm:text-sm text-gray-300 dark:text-gray-300 font-medium bg-gradient-to-r from-blue-500/20 to-blue-600/20 px-3 py-1 rounded-full border border-blue-500/30">
                       2023.01 ~ 현재
                     </span>
                   </div>
-                  <p className="text-gray-300 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-300 dark:text-gray-300 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
+                  <p className="text-gray-400 dark:text-gray-400 text-sm leading-relaxed">
                     멀티 클라우드 관리 플랫폼 개발 • 서비스 카탈로그 • Keycloak SSO • NX Monorepo • FSD 패턴 • MCP 생성형 AI (Cursor, Windsurf)
                   </p>
                 </div>
@@ -129,14 +129,14 @@ const About = () => {
                       <div className="p-2 bg-green-500/20 rounded-lg">
                         <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                       </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-white">크로니즈시스템</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-white dark:text-white">크로니즈시스템</h4>
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-300 font-medium bg-gradient-to-r from-green-500/20 to-green-600/20 px-3 py-1 rounded-full border border-green-500/30">
+                    <span className="text-xs sm:text-sm text-gray-300 dark:text-gray-300 font-medium bg-gradient-to-r from-green-500/20 to-green-600/20 px-3 py-1 rounded-full border border-green-500/30">
                       2020.01 ~ 2022.10
                     </span>
                   </div>
-                  <p className="text-gray-300 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-300 dark:text-gray-300 mb-3 text-sm sm:text-base font-medium">Frontend Developer</p>
+                  <p className="text-gray-400 dark:text-gray-400 text-sm leading-relaxed">
                     스마트팩토리 MES • ERP 연계 • 3D 모니터링 • 수율/일지 관리 • 8개 공장 구축
                   </p>
                 </div>
