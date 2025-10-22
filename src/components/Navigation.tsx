@@ -52,8 +52,21 @@ const Navigation = () => {
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
+    
+    // 모바일과 데스크톱에서 다른 오프셋 적용
+    const isMobile = window.innerWidth < 768; // md 브레이크포인트
+    const headerHeight = isMobile ? 80 : 64; // 모바일에서는 더 큰 오프셋
+    
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
