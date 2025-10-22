@@ -43,10 +43,10 @@ const Skills = () => {
                 {skillCategory.items.map((skill, skillIndex) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-2">
-                      <span className="text-white dark:text-white font-medium">
+                      <span className="text-white dark:text-white font-semibold">
                         {skill.name}
                       </span>
-                      <span className="text-gray-400 dark:text-gray-400">{skill.level}%</span>
+                      <span className="text-gray-200 dark:text-gray-200 font-medium">{skill.level}%</span>
                     </div>
                     <div className="h-2 bg-gray-700 dark:bg-gray-700 rounded-full overflow-hidden">
                       <motion.div
