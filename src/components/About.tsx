@@ -61,7 +61,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* 스킬 카드들 - 배경 유지 */}
+        {/* 스킬 카드들 - 차트 영역과 동일한 어두운 회색 배경으로 변경 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {features.map((feature, index) => (
             <motion.div
@@ -69,9 +69,9 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:from-white/10 hover:to-white/15 transition-all duration-300 group"
+              className="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-700/50 transition-all duration-300 group"
             >
-              <div className="text-primary-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-3 text-white">
@@ -82,17 +82,17 @@ const About = () => {
           ))}
         </div>
 
-        {/* 경력 섹션 */}
+        {/* 경력 섹션 - 차트 영역과 동일한 어두운 회색 배경으로 변경 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="glass bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl overflow-hidden"
+          className="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-2xl sm:rounded-3xl overflow-hidden"
         >
           <div className="p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-primary-500/20 rounded-xl">
-                <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-primary-400" />
+              <div className="p-3 bg-blue-500/20 rounded-xl">
+                <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-blue-400" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white">경력</h3>
             </div>
