@@ -19,7 +19,7 @@ const nextConfig = {
   // GitHub Pages 배포를 위한 설정
   output: 'export',
   trailingSlash: true,
-  distDir: 'dist',
+  distDir: 'out', // GitHub Actions와 일치하도록 수정
   assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio-khjo' : '',
   basePath: process.env.NODE_ENV === 'production' ? '/portfolio-khjo' : '',
 }
