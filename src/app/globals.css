@@ -1,0 +1,491 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-white transition-colors duration-300;
+  }
+
+  html.light body {
+    @apply bg-white text-gray-900;
+  }
+
+  * {
+    @apply border-gray-800;
+  }
+
+  html.light * {
+    @apply border-gray-200;
+  }
+}
+
+@layer utilities {
+  .grid-background {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  html.light .grid-background {
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-blue-500 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  html.light .gradient-text {
+    @apply from-blue-700 via-purple-700 to-pink-700;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm;
+  }
+
+  html.light .glass {
+    @apply bg-blue-50 shadow-md border border-blue-200;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/20;
+  }
+
+  html.light .card-hover {
+    @apply hover:shadow-xl hover:shadow-blue-300/50;
+  }
+
+  .section-bg-even {
+    @apply bg-black/30;
+  }
+
+  html.light .section-bg-even {
+    @apply bg-blue-50;
+  }
+
+  /* 원형 배경을 위한 bg-white/10 커스터마이징 */
+  .bg-white\/10 {
+    background-color: hsla(0, 0%, 100%, .1);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  html.light .bg-white\/10 {
+    background-color: hsla(0, 0%, 0%, .05);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+html.light ::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  @apply bg-blue-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-500;
+}
+
+/* ============================================
+   모바일 메뉴 애니메이션
+   ============================================ */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   반응형 디자인 시스템 - 통합 버전
+   ============================================ */
+
+/* 기본 스타일 (모든 화면 크기) */
+* {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 섹션 패딩 */
+section {
+  padding: 1.5rem 0.75rem;
+}
+
+/* 제목 스타일 */
+.gradient-text {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* 카드 스타일 */
+.glass {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.light .glass {
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* 타이포그래피 계층 */
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* 간격 최적화 */
+.space-y-8 > * + * {
+  margin-top: 1.25rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 0.75rem;
+}
+
+.space-y-3 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.375rem;
+}
+
+.space-y-1 > * + * {
+  margin-top: 0.25rem;
+}
+
+/* 아이콘 크기 최적화 */
+.w-8.h-8 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.w-6.h-6 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.w-5.h-5 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.w-4.h-4 {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.w-3.h-3 {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* 텍스트 크기 최적화 */
+.text-xs {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.text-sm {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.text-base {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* 버튼 및 링크 최적화 */
+button, .btn {
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+a {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* 기술 태그 최적화 */
+.tech-tag {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  margin: 0.125rem;
+}
+
+/* 프로젝트 카드 최적화 */
+.project-card {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+}
+
+/* 성과 리스트 최적화 */
+.achievement-list {
+  margin-bottom: 1rem;
+}
+
+.achievement-item {
+  margin-bottom: 0.375rem;
+}
+
+/* 메타데이터 최적화 */
+.metadata {
+  margin-bottom: 0.75rem;
+}
+
+.metadata-item {
+  margin-right: 1rem;
+}
+
+/* 데스크톱 스타일 (768px 이상) */
+@media (min-width: 768px) {
+  .gradient-text {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  .glass {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+
+/* ============================================
+   다크모드 텍스트 가독성 개선
+   ============================================ */
+
+/* 다크모드 기본 텍스트 색상 개선 */
+body {
+  color: #f8fafc;
+}
+
+/* 다크모드 회색 텍스트 색상 개선 */
+.text-gray-300 {
+  color: #e2e8f0;
+  font-weight: 400;
+}
+
+.text-gray-400 {
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+.text-gray-500 {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* 다크모드 주요 색상 개선 */
+.text-primary-400 {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+.text-green-400 {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.text-white {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* 다크모드 제목 색상 개선 */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* 다크모드 본문 텍스트 개선 */
+p, span, li {
+  color: #e2e8f0;
+  font-weight: 400;
+}
+
+/* ============================================
+   성과 영역 녹색 스타일링
+   ============================================ */
+
+.text-green-400 {
+  color: #34d399;
+  font-weight: 600;
+}
+
+/* ============================================
+   Light Mode 최적화 - 더 어울리는 색상
+   ============================================ */
+
+html.light section {
+  background-color: #ffffff;
+}
+
+html.light nav {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+html.light p,
+html.light span:not(.gradient-text):not(.text-green-400),
+html.light li {
+  color: #475569;
+  font-weight: 500;
+}
+
+html.light .text-gray-300,
+html.light .text-gray-400 {
+  color: #64748b;
+  font-weight: 500;
+}
+
+html.light .text-white {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+html.light .text-green-400 {
+  color: #059669;
+  font-weight: 700;
+}
+
+html.light .text-primary-400 {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* 라이트 모드에서 회색 요소들을 파란색 계열로 변경 */
+html.light .glass {
+  background-color: #eff6ff;
+  border-color: #dbeafe;
+}
+
+html.light .section-bg-even {
+  background-color: #f8fafc;
+}
+
+html.light .card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04);
+}
