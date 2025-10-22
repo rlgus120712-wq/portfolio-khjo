@@ -53,17 +53,25 @@ const Navigation = () => {
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
     
-    // 모바일과 데스크톱에서 다른 오프셋 적용
-    const isMobile = window.innerWidth < 768; // md 브레이크포인트
-    const headerHeight = isMobile ? 80 : 64; // 모바일에서는 더 큰 오프셋
-    
+    // 각 섹션의 실제 제목 요소를 찾아서 정확한 위치로 스크롤
     const element = document.querySelector(href);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      // 섹션 내에서 제목 요소 찾기 (h1, h2, h3 등)
+      const titleElement = element.querySelector('h1, h2, h3, h4, h5, h6') || element;
+      
+      // 현재 네비게이션 바의 높이 계산
+      const navElement = document.querySelector('nav');
+      const navHeight = navElement ? navElement.offsetHeight : 64;
+      
+      // 모바일에서는 추가 여백 고려
+      const isMobile = window.innerWidth < 768;
+      const extraOffset = isMobile ? 20 : 10;
+      
+      const elementPosition = titleElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight - extraOffset;
       
       window.scrollTo({
-        top: offsetPosition,
+        top: Math.max(0, offsetPosition), // 음수 방지
         behavior: 'smooth'
       });
     }
