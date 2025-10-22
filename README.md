@@ -31,9 +31,6 @@ npm run dev
 
 # Build for production
 npm run build
-
-# Export static files
-npm run export
 ```
 
 ## Deployment
@@ -41,3 +38,9 @@ npm run export
 This project is automatically deployed to GitHub Pages.
 
 Visit: https://rlgus120712-wq.github.io/portfolio-khjo/
+
+## Recent Updates
+
+- Fixed GitHub Pages deployment configuration
+- Updated workflow for proper deployment
+- Added proper permissions and settings
