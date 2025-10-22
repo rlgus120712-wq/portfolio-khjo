@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 const Projects = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  const [expandedItem, setExpandedItem] = useState<number | null>(null);
   
   useEffect(() => {
     const checkMobile = () => {
@@ -29,11 +29,7 @@ const Projects = () => {
   });
 
   const toggleExpanded = (index: number) => {
-    setExpandedItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
+    setExpandedItem(prev => prev === index ? null : index);
   };
 
   return (
@@ -55,7 +51,7 @@ const Projects = () => {
 
         <div className="space-y-3 sm:space-y-4">
           {projects.map((project, index) => {
-            const isExpanded = expandedItems.includes(index);
+            const isExpanded = expandedItem === index;
             
             return (
               <motion.div
@@ -63,11 +59,11 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }} // 지연 시간 단축
-                className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl overflow-hidden shadow-lg"
+                className="bg-sky-50/80 backdrop-blur-sm border border-sky-100 rounded-xl overflow-hidden shadow-lg"
               >
                 {/* 아코디언 헤더 - 클릭 가능한 영역 */}
                 <div 
-                  className="p-4 sm:p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+                  className="p-4 sm:p-6 cursor-pointer hover:bg-sky-100/50 transition-colors duration-200"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-center justify-between">
@@ -134,9 +130,9 @@ const Projects = () => {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden border-t border-gray-200"
+                      className="overflow-hidden border-t border-sky-200"
                     >
-                      <div className="px-4 sm:px-6 py-4 sm:py-6 bg-gray-50">
+                      <div className="px-4 sm:px-6 py-4 sm:py-6 bg-sky-50/50">
                         {/* 프로젝트 설명 */}
                         <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
                           {project.description}
