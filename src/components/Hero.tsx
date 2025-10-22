@@ -21,14 +21,14 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           
-          {/* 왼쪽 영역: 프로필 정보 */}
+          {/* 왼쪽 영역: 프로필 정보 (40%) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:col-span-2"
           >
             {/* Profile Image */}
             <motion.div
@@ -116,12 +116,12 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* 오른쪽 영역: 경력 정보 */}
+          {/* 오른쪽 영역: 경력 정보 (60%) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="glass rounded-2xl p-6 sm:p-8"
+            className="glass rounded-2xl p-6 sm:p-8 lg:col-span-3"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-blue-500/20 rounded-xl">
