@@ -34,9 +34,9 @@ const Skills = () => {
               initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="glass p-6 rounded-xl"
+              className="bg-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-xl p-6"
             >
-              <h3 className="text-2xl font-bold mb-6 text-primary-500">
+              <h3 className="text-2xl font-bold mb-6 text-blue-400">
                 {skillCategory.category}
               </h3>
               <div className="space-y-4">
@@ -48,7 +48,7 @@ const Skills = () => {
                       </span>
                       <span className="text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-white dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={
@@ -59,7 +59,7 @@ const Skills = () => {
                           delay: categoryIndex * 0.1 + skillIndex * 0.1,
                           ease: 'easeOut',
                         }}
-                        className="h-full bg-gradient-to-r from-primary-500 to-blue-500"
+                        className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
                       />
                     </div>
                   </div>
