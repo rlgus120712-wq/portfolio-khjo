@@ -63,7 +63,7 @@ const Projects = () => {
               >
                 {/* 아코디언 헤더 - 클릭 가능한 영역 */}
                 <div 
-                  className="p-4 sm:p-6 cursor-pointer hover:bg-white/10 dark:hover:bg-white/5 transition-colors duration-200"
+                  className="p-4 sm:p-6 cursor-pointer transition-colors duration-200"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-center justify-between">
@@ -86,7 +86,7 @@ const Projects = () => {
                         )}
                       </div>
                       
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-gray-300 dark:text-gray-300">
+                      <div className="flex flex-wrap items-center gap-3 text-sm text-gray-200 dark:text-gray-200">
                         {project.company && (
                           <div className="flex items-center gap-1.5">
                             <Building2 className="w-4 h-4 text-blue-400" />
@@ -102,7 +102,7 @@ const Projects = () => {
 
                     {/* 오른쪽: 기간과 펼치기 버튼 */}
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1.5 text-sm text-gray-300 dark:text-gray-300">
+                      <div className="flex items-center gap-1.5 text-sm text-gray-200 dark:text-gray-200">
                         <Calendar className="w-4 h-4 text-blue-400" />
                         <span className="whitespace-nowrap">{project.period}</span>
                       </div>
@@ -132,9 +132,9 @@ const Projects = () => {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden border-t border-white/10 dark:border-white/10"
                     >
-                      <div className="px-4 sm:px-6 py-4 sm:py-6 bg-white/5 dark:bg-white/5">
+                      <div className="px-4 sm:px-6 py-4 sm:py-6 glass">
                         {/* 프로젝트 설명 */}
-                        <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg mb-4 leading-relaxed">
+                        <p className="text-gray-700 dark:text-gray-100 text-base sm:text-lg mb-4 leading-relaxed font-medium">
                           {project.description}
                         </p>
 
@@ -147,10 +147,10 @@ const Projects = () => {
                             {project.highlights.map((highlight, i) => (
                               <div key={i} className="flex items-start gap-2">
                                 <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
-                                <p className={`text-sm sm:text-base leading-relaxed ${
+                                <p className={`text-sm sm:text-base leading-relaxed font-medium ${
                                   highlight.startsWith('📊 성과:')
                                     ? 'text-green-600 dark:text-green-400 font-semibold'
-                                    : 'text-gray-700 dark:text-gray-200'
+                                    : 'text-gray-700 dark:text-gray-100'
                                 }`}>
                                   {highlight}
                                 </p>
